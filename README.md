@@ -1,25 +1,25 @@
-# Inventory Pattern Optimization (I-POP)
+# Fire Multi Label Classification (FmC)
 
-> Inventory Optimization with Product Reorder Detection Using Unsupervised Learning
+> Forest Conservation Solutions through Monitoring The Presence of Fire and Smoke with an Image Classification System
 
 ## 🚀 Overview
 
-Many businesses face challenges in managing inventory because it is difficult to predict the timing and quantity of product reorders. Through this project, **I-POP** (*Inventory Product Order Prediction*) is present as a system that utilizes the **Association Rule Learning** method to analyze purchasing patterns and recommend product reorders automatically. This solution helps businesses prevent stock shortages, reduce waste and increase operational efficiency.
+Forest fires are one of the major threats to biodiversity, ecosystems, and the environment. The (FmC) **Fire Multi-label Classification** project offers an intelligent solution that utilizes **Convolutional Neural Networks (CNN)** to detect and classify the presence of fire, smoke, or normal forest conditions in images. This approach supports forest conservation efforts with faster response times and reduces the risk of uncontrolled fires.
 
 ## 🎯 Objectives
 
-- Optimize inventory management by reducing stockouts and overstocks through data-driven reorder recommendations.
-- Apply unsupervised learning (Association Rule Learning) to discover product purchase patterns without labeled data.
-- Build a reusable pipeline for rule extraction and evaluate its integration potential in real-time inventory systems.
+- Providing early detection system of smoke and fire to support forest conservation.
+- Building CNN model for forest image classification in fire, smoke, and normal categories.
+- Implementing classification system on monitoring device for real-time detection.
 
 ## 📊 Dataset
 
 The project using data that from kaggle platform with as follow information:
-- Title : **Grocery Inventory**
-- Description : Sales Dataset Inventory and Sales Data for Grocery Store Management.
-- Publish Date : 03/2025
-- Publisher : Willian Oliveira
-- Link : https://www.kaggle.com/datasets/willianoliveiragibin/grocery-inventory
+- Title : **Big Data Competition Statistics Explore 2024**
+- Description : Fire, Smoke, and Normal Conditions Images for Fire Prediction.
+- Publish Date : 08/2024
+- Publisher : STAT EXPLORE USK
+- Link : [Fire Data](https://www.kaggle.com/competitions/big-data-competition-statistics-explore-2024/data)
 
 
 ## 🛠️ Tech Stack
@@ -37,8 +37,8 @@ The project using data that from kaggle platform with as follow information:
   </tr>
   <tr>
     <td>Main library</td>
-    <td>Pandas,NumPy </br>PyFPGrowth </br>Matplotlib,Seaborn</td>
-    <td>For data manipulation and numerical calculations </br> For application FP-Growth Algorithm </br>For graphic visualization and association pattern</td>
+    <td>Pandas,NumPy </br>Tensorflow,Keras </br>OpenCV,Pillow</td>
+    <td>For data manipulation and understand </br> For modelling neural network (especially CNN) </br>For image preprocessing</td>
   </tr>
   <tr>
     <td>Tools</td>
@@ -53,16 +53,18 @@ The project using data that from kaggle platform with as follow information:
 > akan diisi hasil evaluasi model dan aturan yang digunakan
 ## 🧠 Learned
 
-- Implemented FP-Growth for extracting product association rules from transactional data.
-- Performed data preprocessing and transformation tailored for unsupervised learning.
-- Visualized item patterns and rule metrics to support inventory decision-making.
-- Used GitHub and Google Colab for version control and cloud-based experimentation.
+- Implemented a CNN architecture to classify forest imagery into multiple risk levels (fire, smoke, safe).
+- Handled image preprocessing, augmentation, and model evaluation effectively.
+- Understood the importance of labeled visual data in environmental monitoring applications.
+- Utilized GitHub and Colab for streamlined development, versioning, and experimentation.
 
 ## 🌱 Future Work
 
-- Integrate the model with real-time inventory systems for automated reorder actions.
-- Extend the analysis with temporal and seasonal data to capture dynamic demand patterns.
-- Combine unsupervised and supervised learning to improve prediction accuracy.
+- Integrate the system with real-time video feeds from drones or CCTV for proactive forest surveillance.
+- Deploy the model on edge devices (e.g., Raspberry Pi) for on-site monitoring.
+- Expand dataset diversity with weather variations, different vegetation types, and nighttime detection.
+- Add alert mechanisms (e.g., SMS, Telegram) for instant notifications when fire or smoke is detected.
+
 ## 👤 Author
 
 | Nama | Peran | GitHub |
