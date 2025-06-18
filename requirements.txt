@@ -1,1 +1,53 @@
+# Library for Fire Multi-label Classification
+
+# General Utilities
+# ===============================================
+import os                      # File path and directory management
+import glob                    # File pattern matching (e.g., *.jpg)
+import random                  # Random sampling and shuffling
+from tqdm import tqdm          # Progress bar for loops
+from datetime import datetime  # For timestamping
+
+# Data Handling and Analysis
+# ===============================================
+import numpy as np       # Numerical computing and array operations
+import pandas as pd      # DataFrame handling and CSV reading
+
+# Image Processing
+# ===============================================
+import cv2               # OpenCV for image loading and preprocessing
+from PIL import Image    # PIL for image format compatibility
+
+# Data Visualization
+# ===============================================
+import matplotlib.pyplot as plt    # Static visualization
+import seaborn as sns              # Statistical visualization
+import plotly.express as px        # Interactive visualization
+import plotly.graph_objects as go  # More control over interactive plots
+
+# Preprocessing & Label Transformation
+# ===============================================
+from sklearn.model_selection import train_test_split         # Splitting data into train/val/test
+from sklearn.preprocessing import MultiLabelBinarizer        # Convert multi-label text to binary matrix
+from sklearn.metrics import classification_report, f1_score, hamming_loss  # Evaluation metrics
+
+# Data Augmentation (Highly Recommended)
+# ===============================================
+import albumentations as A                      # Image augmentation
+from albumentations.pytorch import ToTensorV2   # Convert augmented image to PyTorch tensor (if used)
+
+# Deep Learning - TensorFlow/Keras
+# ===============================================
+import tensorflow as tf
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import (
+    Input, Conv2D, MaxPooling2D, Flatten, Dense,
+    Dropout, BatchNormalization, GlobalAveragePooling2D
+)
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint  # Training control
+
+# Saving / Loading Model and Objects
+# ===============================================
+import joblib  # Save and load preprocessing objects like label binarizer
 
