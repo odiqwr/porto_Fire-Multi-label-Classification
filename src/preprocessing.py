@@ -76,7 +76,7 @@ def show_samples(df, label_name, num=4):
 for label in df['label'].unique():
     show_samples(df, label)
 
-# 6. Prepare data for modeling with multilab binaryzer
+# 6. Labelling data with multilabelbinaryzer
 # Pastikan semua nilai label berupa string sebelum split
 df['label_list'] = df['label'].astype(str).apply(lambda x: x.split(','))
 # Inisialisasi dan fit MultiLabelBinarizer
@@ -88,3 +88,19 @@ df_mlb = pd.DataFrame(label_binarized, columns=mlb.classes_)
 df = pd.concat([df, df_mlb], axis=1)
 # Hapus kolom duplikat jika ada
 df = df.loc[:, ~df.columns.duplicated()]
+
+# 7. Resizing Images to Prepare Data Processing
+resized_dir = "resized_images."
+os.makedirs(resized_dir, exist_ok=True)
+for i, row in df.iterrows():
+    old_path = os.path.join('PCS/Train Data/Train Data', row['filename'])  # path lama
+    new_path = os.path.join(resized_dir, row['filename'])  # path baru
+    try:
+        with Image.open(old_path) as img:
+            img = img.convert('RGB')  # konversi ke RGB untuk jaga-jaga
+            img = img.resize((180, 180))
+            img.save(new_path)
+    except Exception as e:
+        print(f"Gagal resize: {old_path} | Error: {e}")
+# Update filename agar menunjuk ke folder hasil resize
+df['filename'] = df['filename'].apply(lambda x: os.path.join(resized_dir, x))
