@@ -84,3 +84,7 @@ mlb = MultiLabelBinarizer()
 label_binarized = mlb.fit_transform(df['label_list'])
 # Buat DataFrame hasil binarisasi dan gabungkan ke df
 df_mlb = pd.DataFrame(label_binarized, columns=mlb.classes_)
+# Gabungkan langsung ke df_asli
+df = pd.concat([df, df_mlb], axis=1)
+# Hapus kolom duplikat jika ada
+df = df.loc[:, ~df.columns.duplicated()]
